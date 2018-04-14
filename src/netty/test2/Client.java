@@ -20,7 +20,7 @@ public class Client {
                 .channel(NioSocketChannel.class)
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
-                    protected void initChannel(SocketChannel socketChannel) throws Exception {
+                    protected void initChannel(SocketChannel socketChannel) {
                         ByteBuf buf=Unpooled.copiedBuffer("$_".getBytes());
                         socketChannel.pipeline().addLast(new DelimiterBasedFrameDecoder(1024,buf));
                         socketChannel.pipeline().addLast(new StringDecoder());

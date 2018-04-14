@@ -24,4 +24,13 @@ public class  ClientHandler extends ChannelHandlerAdapter {
         ctx.close();
     }
 
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("激活...");
+    }
+
+    @Override
+    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("读完毕");
+    }
 }
